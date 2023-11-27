@@ -4,7 +4,8 @@ module com.example.retogrupalgestiontareas {
 
 
     opens com.example.retogrupalgestiontareas to javafx.fxml;
+    opens com.example.retogrupalgestiontareas.controllers to javafx.fxml;
+
     exports com.example.retogrupalgestiontareas;
     exports com.example.retogrupalgestiontareas.controllers;
-    opens com.example.retogrupalgestiontareas.controllers to javafx.fxml;
 }
