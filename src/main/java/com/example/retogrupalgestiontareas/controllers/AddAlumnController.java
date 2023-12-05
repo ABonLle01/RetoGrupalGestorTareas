@@ -31,6 +31,7 @@ public class AddAlumnController {
     private Spinner<Integer> spinnerFCT;
     @javafx.fxml.FXML
     private TextArea taObservaciones;
+
     @javafx.fxml.FXML
     private Button btnAlumns;
     @javafx.fxml.FXML

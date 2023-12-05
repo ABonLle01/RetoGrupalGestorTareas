@@ -17,6 +17,7 @@ public class AddEnterpriseController {
     private TextField txtEmail;
     @javafx.fxml.FXML
     private TextArea taObservaciones;
+
     @javafx.fxml.FXML
     private Button btnAñadir;
     @javafx.fxml.FXML

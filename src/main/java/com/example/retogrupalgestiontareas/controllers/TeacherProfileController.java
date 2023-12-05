@@ -12,15 +12,16 @@ import java.io.IOException;
 
 public class TeacherProfileController {
     @javafx.fxml.FXML
-    private Button btnvolver;
-    @javafx.fxml.FXML
-    private Button btnLogOut;
-    @javafx.fxml.FXML
     private TextField txtNombre;
     @javafx.fxml.FXML
     private TextField txtApellidos;
     @javafx.fxml.FXML
     private TextField txtEmail;
+
+    @javafx.fxml.FXML
+    private Button btnvolver;
+    @javafx.fxml.FXML
+    private Button btnLogOut;
     @javafx.fxml.FXML
     private Button btnPass;
     @javafx.fxml.FXML
