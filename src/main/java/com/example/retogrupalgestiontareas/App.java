@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class App extends Application {
 
-    private static Stage stage;
+    public static Stage stage;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -27,8 +27,6 @@ public class App extends Application {
         stage.setTitle(title);
         stage.setScene(scene);
         stage.show();
-        System.out.println("branch");
-        System.out.println("branch2");
     }
 
 
