@@ -14,6 +14,7 @@ public class AddActivityController {
     private DatePicker dpFecha;
     @javafx.fxml.FXML
     private TextArea txtObservaciones;
+
     @javafx.fxml.FXML
     private Button btnAñadir;
     @javafx.fxml.FXML

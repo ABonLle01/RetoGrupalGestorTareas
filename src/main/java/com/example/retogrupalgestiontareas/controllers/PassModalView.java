@@ -16,6 +16,7 @@ public class PassModalView {
     private PasswordField txtNewPass;
     @javafx.fxml.FXML
     private PasswordField txtRepPass;
+
     @javafx.fxml.FXML
     private Button btnAceptar;
     @javafx.fxml.FXML

@@ -1,6 +1,8 @@
 package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
+import com.example.retogrupalgestiontareas.tablas.Empresa;
+import com.example.retogrupalgestiontareas.tablas.Usuario;
 import javafx.event.*;
 import javafx.scene.control.*;
 
@@ -8,17 +10,17 @@ import java.io.IOException;
 
 public class EnterpriseListController {
     @javafx.fxml.FXML
-    private TableView tblEmpresas;
+    private TableView<Empresa> tblEmpresas;
     @javafx.fxml.FXML
-    private TableColumn cNombre;
+    private TableColumn<Empresa, String> cNombre;
     @javafx.fxml.FXML
-    private TableColumn cResponsable;
+    private TableColumn<Empresa, String> cResponsable;
     @javafx.fxml.FXML
-    private TableColumn cTelefono;
+    private TableColumn<Empresa, String> cTelefono;
     @javafx.fxml.FXML
-    private TableColumn cEmail;
+    private TableColumn<Empresa, String> cEmail;
     @javafx.fxml.FXML
-    private TableColumn cAlumno;
+    private TableColumn<Usuario, String> cAlumno;
 
     @javafx.fxml.FXML
     private Button btnVolver;
