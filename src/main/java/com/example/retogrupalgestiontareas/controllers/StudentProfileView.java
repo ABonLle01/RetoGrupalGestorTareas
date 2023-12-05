@@ -63,7 +63,7 @@ public class StudentProfileView {
     public void initialize() {
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void goToAlumns(ActionEvent actionEvent) {
     }
 
@@ -91,7 +91,4 @@ public class StudentProfileView {
     public void logout(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void goToAlumns(ActionEvent actionEvent) {
-    }
 }
