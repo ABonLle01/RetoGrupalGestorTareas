@@ -87,13 +87,6 @@ public class StudentProfileView {
     public void delete(ActionEvent actionEvent) {
     }
 
-    @Deprecated
-    public void goToChange(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void logout(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void goToChange(ActionEvent actionEvent) {
