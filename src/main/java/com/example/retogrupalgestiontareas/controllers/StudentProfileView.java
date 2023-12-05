@@ -49,8 +49,6 @@ public class StudentProfileView {
     private TableColumn<Usuario, String> cObservations;
 
     @javafx.fxml.FXML
-    private Button btnVerAlumnos;
-    @javafx.fxml.FXML
     private Button btnObserv;
     @javafx.fxml.FXML
     private Button btnGuardar;
@@ -58,12 +56,14 @@ public class StudentProfileView {
     private Button btnActualizar;
     @javafx.fxml.FXML
     private Button btnEliminar;
+    @javafx.fxml.FXML
+    private Button btnVerAlumnos;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void goToAlumns(ActionEvent actionEvent) {
     }
 
@@ -81,5 +81,17 @@ public class StudentProfileView {
 
     @javafx.fxml.FXML
     public void delete(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void goToChange(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void logout(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void goToAlumns(ActionEvent actionEvent) {
     }
 }
