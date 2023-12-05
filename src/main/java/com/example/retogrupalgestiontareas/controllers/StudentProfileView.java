@@ -1,9 +1,11 @@
 package com.example.retogrupalgestiontareas.controllers;
 
+import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.domain.Usuario;
 import javafx.event.*;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class StudentProfileView {
@@ -68,11 +70,13 @@ public class StudentProfileView {
     }
 
     @Deprecated
-    public void goToAlumns(ActionEvent actionEvent) {
+    public void goToAlumns(ActionEvent actionEvent) throws IOException {
+        App.changeScene("alumnList-view.fxml","Lista de Alumnos");
     }
 
     @javafx.fxml.FXML
     public void addObservations(ActionEvent actionEvent) {
+        //modal();
     }
 
     @javafx.fxml.FXML

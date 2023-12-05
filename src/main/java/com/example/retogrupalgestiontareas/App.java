@@ -14,7 +14,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         this.stage=stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/addActivity-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 750, 600);
         stage.setTitle("Iniciar Sesión");
         stage.setScene(scene);

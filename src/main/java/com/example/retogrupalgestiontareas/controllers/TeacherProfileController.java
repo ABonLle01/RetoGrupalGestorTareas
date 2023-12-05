@@ -49,8 +49,8 @@ public class TeacherProfileController {
     public void saveChanges(ActionEvent actionEvent) {
     }
 
-    public void modal(Stage stage) throws IOException {
-        this.profile=stage;
+    public static void modal(Stage stage) throws IOException {
+        profile=stage;
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/passModal-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 450, 300);
         profile.setTitle("Cambiar contraseña");

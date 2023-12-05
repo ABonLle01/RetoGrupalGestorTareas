@@ -1,7 +1,10 @@
 package com.example.retogrupalgestiontareas.controllers;
 
+import com.example.retogrupalgestiontareas.App;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+
+import java.io.IOException;
 
 public class AddActivityController {
     @javafx.fxml.FXML
@@ -21,10 +24,13 @@ public class AddActivityController {
     private Button btnActivities;
 
     @javafx.fxml.FXML
-    public void addActivity(ActionEvent actionEvent) {
+    public void addActivity(ActionEvent actionEvent) throws IOException {
+        App.changeScene("studentProfileStudent-view.fxml","Detalles Alumno");
     }
 
     @javafx.fxml.FXML
-    public void goToActivities(ActionEvent actionEvent) {
+    public void goToActivities(ActionEvent actionEvent) throws IOException {
+        App.changeScene("studentProfileStudent-view.fxml","Detalles Alumno");
+
     }
 }

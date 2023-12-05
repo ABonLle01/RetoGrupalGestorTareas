@@ -22,6 +22,6 @@ public class LoginController {
 
     @FXML
     public void login(ActionEvent actionEvent) throws IOException {
-        App.changeScene("addAlumn-view.fxml","Añadir Actividad");
+        App.changeScene("addActivity-view.fxml","Añadir Actividad");
     }
 }
