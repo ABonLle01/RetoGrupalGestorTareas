@@ -57,13 +57,17 @@ public class StudentProfileView {
     @javafx.fxml.FXML
     private Button btnEliminar;
     @javafx.fxml.FXML
-    private Button btnVerAlumnos;
+    private Button btnCambiar;
+    @javafx.fxml.FXML
+    private Button btnCerrar;
+    @javafx.fxml.FXML
+    private Button btnAñadir;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void goToAlumns(ActionEvent actionEvent) {
     }
 
@@ -91,4 +95,15 @@ public class StudentProfileView {
     public void logout(ActionEvent actionEvent) {
     }
 
+    @javafx.fxml.FXML
+    public void goToChange(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void logout(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void goToActivities(ActionEvent actionEvent) {
+    }
 }
