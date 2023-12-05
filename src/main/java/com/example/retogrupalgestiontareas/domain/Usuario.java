@@ -1,4 +1,4 @@
-package com.example.retogrupalgestiontareas.tablas;
+package com.example.retogrupalgestiontareas.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -30,6 +30,6 @@ public class Usuario implements Serializable {
     private String observaciones;
 
     @OneToMany(mappedBy = "id_empresa",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<Empresa> enterprises = new ArrayList<>(0);
+    private List<Empresa> companies = new ArrayList<>(0);
 
 }
