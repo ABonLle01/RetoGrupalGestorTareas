@@ -1,4 +1,4 @@
-package com.example.retogrupalgestiontareas.tablas;
+package com.example.retogrupalgestiontareas.domain;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
