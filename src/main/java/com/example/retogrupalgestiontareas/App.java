@@ -27,6 +27,7 @@ public class App extends Application {
         stage.setTitle(title);
         stage.setScene(scene);
         stage.show();
+        System.out.println("branch");
     }
 
 
