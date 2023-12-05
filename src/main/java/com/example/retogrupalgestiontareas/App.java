@@ -29,6 +29,7 @@ public class App extends Application {
         stage.show();
         System.out.println("branch");
         System.out.println("branch2");
+        System.out.println("branch4");
     }
 
 
