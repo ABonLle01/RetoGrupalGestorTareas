@@ -41,21 +41,21 @@ public class TeacherProfileController {
 
     @javafx.fxml.FXML
     public void changePassword(ActionEvent actionEvent) throws IOException {
-        modal(profile);
-
+        //modal(profile);
+        App.modal(profile,"passModal-view.fxml");
     }
 
     @javafx.fxml.FXML
     public void saveChanges(ActionEvent actionEvent) {
     }
 
-    public static void modal(Stage stage) throws IOException {
+    /*public static void modal(Stage stage) throws IOException {
         profile=stage;
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/passModal-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 450, 300);
         profile.setTitle("Cambiar contraseña");
         profile.setScene(scene);
         profile.show();
-    }
+    }*/
 
 }

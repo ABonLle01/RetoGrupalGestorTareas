@@ -1,12 +1,15 @@
 package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
-import com.example.retogrupalgestiontareas.domain.Usuario;
+import com.example.retogrupalgestiontareas.domain.entities.Usuario;
 import javafx.event.*;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+
+import static com.example.retogrupalgestiontareas.controllers.TeacherProfileController.profile;
 
 public class StudentProfileView {
     @javafx.fxml.FXML
@@ -65,18 +68,16 @@ public class StudentProfileView {
     @javafx.fxml.FXML
     private Button btnAñadir;
 
+    //este es el stage para el modal de cambiar de contraseña
+    public static Stage pass = new Stage();
+
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @Deprecated
-    public void goToAlumns(ActionEvent actionEvent) throws IOException {
-        App.changeScene("alumnList-view.fxml","Lista de Alumnos");
-    }
-
     @javafx.fxml.FXML
     public void addObservations(ActionEvent actionEvent) {
-        //modal();
+        //todo: ir a modal de observaciones
     }
 
     @javafx.fxml.FXML
@@ -93,14 +94,25 @@ public class StudentProfileView {
 
 
     @javafx.fxml.FXML
-    public void goToChange(ActionEvent actionEvent) {
+    public void goToChange(ActionEvent actionEvent) throws IOException {
+        App.modal(pass,"passModal-view.fxml");
+    }
+
+
+
+
+    @javafx.fxml.FXML
+    public void cancel(ActionEvent actionEvent) throws IOException {
+        pass.close();
     }
 
     @javafx.fxml.FXML
-    public void logout(ActionEvent actionEvent) {
+    public void logout(ActionEvent actionEvent) throws IOException {
+        App.changeScene("login-view.fxml","Iniciar Sesión");
     }
 
     @javafx.fxml.FXML
-    public void goToActivities(ActionEvent actionEvent) {
+    public void goToActivities(ActionEvent actionEvent) throws IOException {
+        App.changeScene("addActivity-view.fxml","Añadir Actividad");
     }
 }

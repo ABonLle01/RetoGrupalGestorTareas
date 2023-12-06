@@ -18,11 +18,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.AddActivityController">
+<BorderPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.AddActivityController">
    <top>
       <VBox prefHeight="160.0" prefWidth="557.0" BorderPane.alignment="CENTER">
          <children>
-            <FlowPane alignment="CENTER" hgap="325.0" prefHeight="48.0" prefWidth="373.0">
+            <FlowPane alignment="CENTER" hgap="310.0" prefHeight="48.0" prefWidth="373.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva Actividad">
                      <font>
@@ -32,10 +32,13 @@
                         <Insets left="10.0" />
                      </FlowPane.margin>
                   </Text>
-                  <Button fx:id="btnActivities" mnemonicParsing="false" onAction="#goToActivities" prefHeight="26.0" prefWidth="113.0" text="Ver Actividades">
+                  <Button fx:id="btnActivities" mnemonicParsing="false" onAction="#goToActivities" prefHeight="35.0" prefWidth="132.0" text="Ver Actividades">
                      <FlowPane.margin>
                         <Insets left="5.0" />
                      </FlowPane.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
                   </Button>
                </children>
                <VBox.margin>
@@ -46,10 +49,13 @@
                <children>
                   <Label text="Nombre de la Actividad">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtNombreActividad" alignment="CENTER" maxWidth="538.0" prefHeight="25.0" prefWidth="538.0" />
+                  <TextField fx:id="txtNombreActividad" alignment="CENTER" maxWidth="538.0" prefHeight="25.0" prefWidth="538.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
                </children>
                <padding>
                   <Insets left="50.0" right="25.0" top="10.0" />
@@ -75,7 +81,7 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Número de horas">
+                  <Label prefHeight="69.0" prefWidth="139.0" text="Número de horas" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -108,11 +114,14 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="txtObservaciones" prefHeight="229.0" prefWidth="297.0" />
+                  <TextArea fx:id="txtObservaciones" prefHeight="229.0" prefWidth="274.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextArea>
                </children>
-               <padding>
-                  <Insets right="30.0" />
-               </padding>
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
             </VBox>
          </children>
          <BorderPane.margin>
@@ -121,12 +130,12 @@
       </HBox>
    </center>
    <bottom>
-      <Button fx:id="btnAñadir" mnemonicParsing="false" onAction="#addActivity" prefHeight="34.0" prefWidth="75.0" text="Añadir" BorderPane.alignment="CENTER">
+      <Button fx:id="btnAñadir" mnemonicParsing="false" onAction="#addActivity" prefHeight="40.0" prefWidth="106.0" text="Añadir" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" />
          </BorderPane.margin>
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </Button>
    </bottom>

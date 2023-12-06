@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 
+import static com.example.retogrupalgestiontareas.controllers.StudentProfileView.pass;
 import static com.example.retogrupalgestiontareas.controllers.TeacherProfileController.profile;
 
 
@@ -35,6 +36,7 @@ public class PassModalView {
     @javafx.fxml.FXML
     public void cancel(ActionEvent actionEvent) throws IOException {
         profile.close();
+        pass.close();
     }
 
 }
