@@ -12,8 +12,8 @@ module com.example.retogrupalgestiontareas {
     opens com.example.retogrupalgestiontareas to javafx.fxml;
     opens com.example.retogrupalgestiontareas.controllers to javafx.fxml;
 
-//    opens com.example.retogrupalgestiontareas.tablas.Empresa;
-//    opens com.example.retogrupalgestiontareas.tablas.Usuario;
+    opens com.example.retogrupalgestiontareas.domain.entities.user;
+    opens com.example.retogrupalgestiontareas.domain.entities;
 
     exports com.example.retogrupalgestiontareas;
     exports com.example.retogrupalgestiontareas.controllers;
