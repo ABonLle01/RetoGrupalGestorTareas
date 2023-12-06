@@ -51,7 +51,6 @@ public class  LoginController {
 
             }
 
-            //App.changeScene("addActivity-view.fxml","Añadir Actividad");
         }
     }
 
