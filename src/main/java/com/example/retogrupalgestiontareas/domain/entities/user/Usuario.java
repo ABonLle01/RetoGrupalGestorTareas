@@ -1,4 +1,4 @@
-package com.example.retogrupalgestiontareas.domain.entities;
+package com.example.retogrupalgestiontareas.domain.entities.user;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -40,4 +40,25 @@ public class Usuario implements Serializable {
         pero cada actividad pertenece a un solo usuario.
     */
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "ID = " + id +
+                ", Nombre = " + nombre +
+                ", Apellido = " + apellido +
+                ", Rol = " + rol +
+                ", DNI = " + dni +
+                ", Nacimiento = " + fecha_nac +
+                ", Telefono = " + telefono +
+                ", Correo = " + email +
+                ", Tutor = " + tutor +
+                ", Contraseña = " + password +
+                ", Total horas de dual = " + totalhorasdual +
+                ", Total horas de fct = " + totalhorasfct +
+                ", Horas restantes dual = " + restantesdual +
+                ", Horas restantes fct=" + restantesfct +
+                ", Observaciones = " + observaciones +
+                ", Empresa = "/*todo: añadir empresa del usuario*/+
+                '}';
+    }
 }

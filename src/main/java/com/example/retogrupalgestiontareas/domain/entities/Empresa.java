@@ -2,6 +2,7 @@ package com.example.retogrupalgestiontareas.domain.entities;
 
 import java.io.Serializable;
 
+import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
 import jakarta.persistence.*;
 import lombok.Data;
 

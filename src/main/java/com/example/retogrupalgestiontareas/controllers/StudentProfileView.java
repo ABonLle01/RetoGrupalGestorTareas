@@ -1,15 +1,13 @@
 package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
-import com.example.retogrupalgestiontareas.domain.entities.Usuario;
+import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
 import javafx.event.*;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
-
-import static com.example.retogrupalgestiontareas.controllers.TeacherProfileController.profile;
 
 public class StudentProfileView {
     @javafx.fxml.FXML
