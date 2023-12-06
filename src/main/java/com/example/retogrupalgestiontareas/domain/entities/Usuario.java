@@ -1,10 +1,11 @@
-package com.example.retogrupalgestiontareas.domain;
+package com.example.retogrupalgestiontareas.domain.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.retogrupalgestiontareas.domain.entities.Empresa;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,19 +18,26 @@ public class Usuario implements Serializable {
     private Long id;
     private String nombre;
     private String apellido;
-    private Integer DNI;
     private String rol;
+    private Integer dni;
     private LocalDate fecha_nac;
+    private Integer telefono;
     private String email;
     private String tutor;
     private String password;
-    private Integer totalhorasfct;
     private Integer totalhorasdual;
+    private Integer totalhorasfct;
     private Integer restantesdual;
-    private Integer restaurantesfct;
+    private Integer restantesfct;
     private String observaciones;
 
     @OneToMany(mappedBy = "id_empresa",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private List<Empresa> companies = new ArrayList<>(0);
+
+    /*
+        Hibernate gestionará la relación entre Usuario y Actividad a través de las anotaciones @ManyToOne y @JoinColumn
+        en la clase Actividad. Esto permite que un usuario tenga muchas actividades,
+        pero cada actividad pertenece a un solo usuario.
+    */
 
 }

@@ -17,12 +17,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.AddAlumnController">
+<BorderPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.AddAlumnController">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="80.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane vgap="10.0">
+            <GridPane hgap="2.0" vgap="10.0">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -117,7 +116,7 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </GridPane>
-            <HBox alignment="CENTER" prefHeight="148.0" prefWidth="700.0" spacing="110.0">
+            <HBox alignment="CENTER" prefHeight="191.0" prefWidth="700.0" spacing="110.0">
                <children>
                   <GridPane hgap="10.0" prefHeight="141.0" prefWidth="287.0">
                     <columnConstraints>
@@ -157,7 +156,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="taObservaciones" prefHeight="114.0" prefWidth="231.0">
+                        <TextArea fx:id="taObservaciones" prefHeight="167.0" prefWidth="231.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -173,14 +172,17 @@
       </VBox>
    </center>
    <top>
-      <FlowPane alignment="CENTER" hgap="350.0" prefHeight="64.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+      <FlowPane alignment="CENTER" hgap="345.0" prefHeight="64.0" prefWidth="750.0" BorderPane.alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Alumno">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Text>
-            <Button fx:id="btnAlumns" mnemonicParsing="false" onAction="#goToAlumns" prefHeight="33.0" prefWidth="109.0" text="Ver Alumnos" />
+            <Button fx:id="btnAlumns" alignment="CENTER" mnemonicParsing="false" onAction="#goToAlumns" prefHeight="35.0" text="Ver Alumnos">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
          </children>
          <BorderPane.margin>
             <Insets top="20.0" />
@@ -192,6 +194,9 @@
          <BorderPane.margin>
             <Insets bottom="25.0" />
          </BorderPane.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
       </Button>
    </bottom>
 </BorderPane>
