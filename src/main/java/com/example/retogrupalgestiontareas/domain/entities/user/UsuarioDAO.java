@@ -25,7 +25,6 @@ public class UsuarioDAO implements DAO<Usuario> {
 
     @Override
     public void update(Usuario data) {
-
     }
 
     @Override
