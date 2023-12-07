@@ -13,8 +13,8 @@
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
 
-        <mapping class="com.example.retogrupalgestiontareas.domain.entities.Actividad"/>
-        <mapping class="com.example.retogrupalgestiontareas.domain.entities.Empresa"/>
+        <mapping class="com.example.retogrupalgestiontareas.domain.entities.activity.Actividad"/>
+        <mapping class="com.example.retogrupalgestiontareas.domain.entities.company.Empresa"/>
         <mapping class="com.example.retogrupalgestiontareas.domain.entities.user.Usuario"/>
     </session-factory>
 </hibernate-configuration>

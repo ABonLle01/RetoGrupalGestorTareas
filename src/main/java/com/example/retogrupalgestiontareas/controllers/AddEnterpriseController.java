@@ -23,6 +23,12 @@ public class AddEnterpriseController {
     @javafx.fxml.FXML
     private Button btnAlumns;
 
+
+    @javafx.fxml.FXML
+    public void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void gotToAlumns(ActionEvent actionEvent) throws IOException {
         App.changeScene("alumnList-view.fxml","Lista de Alumnos");

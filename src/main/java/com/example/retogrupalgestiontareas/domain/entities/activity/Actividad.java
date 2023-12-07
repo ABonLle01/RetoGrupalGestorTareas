@@ -1,4 +1,4 @@
-package com.example.retogrupalgestiontareas.domain.entities;
+package com.example.retogrupalgestiontareas.domain.entities.activity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -25,4 +25,16 @@ public class Actividad implements Serializable {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
+    @Override
+    public String toString() {
+        return "Actividad{" +
+                "ID = " + id +
+                ", Nombre = " + nombre +
+                ", Horas = " + horas +
+                ", Fecha = " + fecha +
+                ", Tipo = " + tipo +
+                ", Observaciones = " + observaciones +
+                ", Usuario = " + usuario.getNombre() +
+                '}';
+    }
 }

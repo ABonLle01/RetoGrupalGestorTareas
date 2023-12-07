@@ -35,6 +35,8 @@ public class UsuarioDAO implements DAO<Usuario> {
     public Usuario validateUser(String email, String pass){
         Usuario result=null;
 
+        //por algun motivo, la sesion es null
+        //todo: arreglar hibernate para que no sea null
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Query<Usuario> q = session.createQuery("from Usuario where email=:e and password=:p", Usuario.class);
             q.setParameter("e",email);

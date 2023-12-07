@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.StudentProfileView">
+<BorderPane prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.StudentProfileView">
     <top>
         <FlowPane alignment="CENTER" hgap="20.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
@@ -81,27 +81,27 @@
                                 <Font size="16.0" />
                             </font>
                         </TextField>
-                        <TextField fx:id="txtHoursDual" GridPane.columnIndex="5">
+                        <TextField fx:id="txtDualHours" editable="false" GridPane.columnIndex="5">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </TextField>
-                        <TextField fx:id="txtFctHours" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                        <TextField fx:id="txtFctHours" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="1">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </TextField>
-                        <TextField fx:id="txtFctTotal" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                        <TextField fx:id="txtFctTotal" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="3">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </TextField>
-                        <TextField fx:id="txtDualTotal" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                        <TextField fx:id="txtDualTotal" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="2">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </TextField>
-                        <TextField fx:id="txtTutor" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <TextField fx:id="txtTutor" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -196,14 +196,14 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="txtEmpresa" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        <TextField fx:id="txtEmpresa" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </TextField>
                         <Button fx:id="btnObserv" mnemonicParsing="false" onAction="#addObservations" prefHeight="25.0" prefWidth="124.0" text="¿Observaciones?" GridPane.columnIndex="5" GridPane.rowIndex="4">
                             <font>
-                                <Font size="13.0" />
+                                <Font size="10.0" />
                             </font>
                         </Button>
                     </children>
@@ -211,7 +211,7 @@
                         <Insets left="50.0" right="50.0" />
                     </VBox.margin>
                 </GridPane>
-                <TableView fx:id="tAlumn" prefHeight="190.0" prefWidth="740.0">
+                <TableView fx:id="table" prefHeight="190.0" prefWidth="740.0">
                     <columns>
                         <TableColumn fx:id="cName" prefWidth="75.0" text="Nombre" />
                         <TableColumn fx:id="cHours" prefWidth="75.0" text="Horas" />
