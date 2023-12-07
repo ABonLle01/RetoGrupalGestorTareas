@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.AlumnObservationsController">
+<BorderPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.ObsModalController">
    <center>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="50.0" right="50.0" />
          </BorderPane.margin>
          <children>
-            <Label alignment="CENTER" prefWidth="107.0" text="Observaciones:">
+            <Label alignment="CENTER" prefWidth="107.0" text="Observaciones">
                <font>
                   <Font size="16.0" />
                </font>
@@ -24,7 +24,7 @@
                   <Insets bottom="15.0" top="15.0" />
                </VBox.margin>
             </Label>
-            <TextArea fx:id="observations" prefHeight="200.0" prefWidth="300.0">
+            <TextArea fx:id="txtObservations" prefHeight="200.0" prefWidth="300.0">
                <font>
                   <Font size="16.0" />
                </font>

@@ -38,6 +38,11 @@ public class AddAlumnController {
     private Button btnAñadir;
 
     @javafx.fxml.FXML
+    public void initialize() {
+
+    }
+
+    @javafx.fxml.FXML
     public void goToAlumns(ActionEvent actionEvent) throws IOException {
         App.changeScene("alumnList-view.fxml","Lista de Alumnos");
     }

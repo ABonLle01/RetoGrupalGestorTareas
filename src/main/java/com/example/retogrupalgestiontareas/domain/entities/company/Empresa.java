@@ -1,4 +1,4 @@
-package com.example.retogrupalgestiontareas.domain.entities;
+package com.example.retogrupalgestiontareas.domain.entities.company;
 
 import java.io.Serializable;
 

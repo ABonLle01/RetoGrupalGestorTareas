@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.retogrupalgestiontareas.domain.entities.Empresa;
+import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
 import jakarta.persistence.*;
 import lombok.Data;
 

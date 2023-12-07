@@ -4,14 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-public class AlumnObservationsController
+public class ObsModalController
 {
-    @javafx.fxml.FXML
-    private TextArea observations;
     @javafx.fxml.FXML
     private Button btnAceptar;
     @javafx.fxml.FXML
     private Button btnCancelar;
+    @javafx.fxml.FXML
+    private TextArea txtObservations;
 
     @javafx.fxml.FXML
     public void initialize() {

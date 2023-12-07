@@ -1,7 +1,7 @@
 package com.example.retogrupalgestiontareas;
 
-import com.example.retogrupalgestiontareas.domain.entities.Actividad;
-import com.example.retogrupalgestiontareas.domain.entities.Empresa;
+import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
+import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
 import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
 
 import lombok.*;
