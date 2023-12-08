@@ -131,7 +131,6 @@ public class StudentProfileView {
     }
 
 
-
     @javafx.fxml.FXML
     public void save(ActionEvent actionEvent) {
     }
