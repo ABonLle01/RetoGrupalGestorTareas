@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import com.example.retogrupalgestiontareas.*;
+
 public class  LoginController {
 
     @FXML
@@ -25,7 +27,7 @@ public class  LoginController {
 
     @FXML
     public void login(ActionEvent actionEvent) throws IOException {
-        /*
+
         String email = txtEmail.getText();
         String pass = txtPassword.getText();
 
@@ -45,8 +47,14 @@ public class  LoginController {
 
                 Session.setCurrentUser(u);
 
+
+
                 try {
-                    App.changeScene("addActivity-view.fxml","Añadir Actividad");
+                    if(u.getRol().equals("Alumno")){
+                        App.changeScene("addActivity-view.fxml","Añadir Actividad");
+                    }else if(u.getRol().equals("Profesor")){
+                        App.changeScene("alumnList-view.fxml","Añadir Actividad");
+                    }
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -54,32 +62,32 @@ public class  LoginController {
             }
 
 
-        }*/
+        }
         //el codigo de arriba esta comentado mientras que no funciona el sessionfactory
 
         //esto es solo de prueba mientras no funciona hibernate
-        Usuario u = new Usuario();
-        u.setEmail(txtEmail.getText());
-        u.setPassword(txtPassword.getText());
-        u.setRol("Alumno");
-        u.setNombre("Sandra");
-        u.setApellido("Fernández");
-        u.setDni(123456789);
-        u.setFecha_nac(LocalDate.now());
-        u.setTelefono(777888999);
-        u.setTotalhorasdual(600);
-        u.setTotalhorasfct(300);
-        u.setRestantesdual(300);
-        u.setRestantesfct(150);
-        u.setTutor("Fernando Martinez");
-        Session.setCurrentUser(u);
+//        Usuario u = new Usuario();
+//        u.setEmail(txtEmail.getText());
+//        u.setPassword(txtPassword.getText());
+//        u.setRol("Alumno");
+//        u.setNombre("Sandra");
+//        u.setApellido("Fernández");
+//        u.setDni(123456789);
+//        u.setFecha_nac(LocalDate.now());
+//        u.setTelefono(777888999);
+//        u.setTotalhorasdual(600);
+//        u.setTotalhorasfct(300);
+//        u.setRestantesdual(300);
+//        u.setRestantesfct(150);
+//        u.setTutor("Fernando Martinez");
+//        Session.setCurrentUser(u);
 
 
-        if(u.getRol().equals("Alumno")){
-            App.changeScene("addActivity-view.fxml","Añadir Actividad");
-        }else if(u.getRol().equals("Profesor")){
-            App.changeScene("alumnList-view.fxml","Añadir Actividad");
-        }
+//        if(u.getRol().equals("Alumno")){
+//            App.changeScene("addActivity-view.fxml","Añadir Actividad");
+//        }else if(u.getRol().equals("Profesor")){
+//            App.changeScene("alumnList-view.fxml","Añadir Actividad");
+//        }
 
 
     }

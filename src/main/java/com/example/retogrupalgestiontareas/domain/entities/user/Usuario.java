@@ -19,7 +19,7 @@ public class Usuario implements Serializable {
     private String nombre;
     private String apellido;
     private String rol;
-    private Integer dni;
+    private String dni;
     private LocalDate fecha_nac;
     private Integer telefono;
     private String email;
@@ -31,8 +31,15 @@ public class Usuario implements Serializable {
     private Integer restantesfct;
     private String observaciones;
 
-    @OneToMany(mappedBy = "id_empresa",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<Empresa> companies = new ArrayList<>(0);
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
+    private Empresa company;
+
+/*    @OneToMany(mappedBy = "id",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<Empresa> companies = new ArrayList<>(0);*/
+
+//    @OneToOne(mappedBy = "id",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//    private Empresa company = new Empresa();
 
     /*
         Hibernate gestionará la relación entre Usuario y Actividad a través de las anotaciones @ManyToOne y @JoinColumn
@@ -58,7 +65,7 @@ public class Usuario implements Serializable {
                 ", Horas restantes dual = " + restantesdual +
                 ", Horas restantes fct=" + restantesfct +
                 ", Observaciones = " + observaciones +
-                ", Empresa = "/*todo: añadir empresa del usuario*/+
+                ", Empresa = " + company.getNombre() +
                 '}';
     }
 }

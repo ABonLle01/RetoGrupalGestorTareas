@@ -47,6 +47,7 @@ public class AddActivityController {
 
     private Actividad newActivity() {
         Actividad a = new Actividad();
+
         a.setNombre(txtNombreActividad.getText());
         a.setHoras(spinnerHoras.getValue());
         a.setTipo(comboTipoPractica.getValue());
@@ -57,6 +58,8 @@ public class AddActivityController {
 
     @javafx.fxml.FXML
     public void goToActivities(ActionEvent actionEvent) throws IOException {
+
+
         App.changeScene("studentProfileStudent-view.fxml","Detalles Alumno");
 
     }

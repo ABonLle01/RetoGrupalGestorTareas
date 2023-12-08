@@ -37,16 +37,21 @@ public class UsuarioDAO implements DAO<Usuario> {
 
         //por algun motivo, la sesion es null
         //todo: arreglar hibernate para que no sea null
+
+        System.out.println("AQui");
+        System.out.println(HibernateUtil.getSessionFactory());
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Query<Usuario> q = session.createQuery("from Usuario where email=:e and password=:p", Usuario.class);
             q.setParameter("e",email);
             q.setParameter("p",pass);
+            var resultado = q.getResultList();
+            if(!resultado.isEmpty()) result = resultado.get(0);
 
-            try{
-                result = q.getSingleResult();
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
+//            try{
+//                result = q.getSingleResult();
+//            } catch (Exception e) {
+//                System.out.println(e.getMessage());
+//            }
 
         }
         return result;

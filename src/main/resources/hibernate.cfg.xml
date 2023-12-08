@@ -7,14 +7,15 @@
     <session-factory>
         <!-- properties -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gestiontareas</property>
-        <property name="hibernate.connection.password"></property>
-        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://server.flushfinder.es:3306/c1gestortareas</property>
+        <property name="hibernate.connection.password">gestortareas</property>
+        <property name="hibernate.connection.username">c1mysql</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
 
         <mapping class="com.example.retogrupalgestiontareas.domain.entities.activity.Actividad"/>
         <mapping class="com.example.retogrupalgestiontareas.domain.entities.company.Empresa"/>
         <mapping class="com.example.retogrupalgestiontareas.domain.entities.user.Usuario"/>
+
     </session-factory>
 </hibernate-configuration>
