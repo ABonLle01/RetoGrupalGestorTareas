@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class UsuarioDAO implements DAO<Usuario> {
     @Override
-    public ArrayList<Usuario> getAll() {
+    public ArrayList<Usuario> getAllByUser(Usuario u) {
         return null;
     }
 

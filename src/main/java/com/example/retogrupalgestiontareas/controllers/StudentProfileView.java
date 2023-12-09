@@ -3,6 +3,7 @@ package com.example.retogrupalgestiontareas.controllers;
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.Session;
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
+import com.example.retogrupalgestiontareas.domain.entities.activity.ActividadDAO;
 import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.List;
 
 public class StudentProfileView {
     @javafx.fxml.FXML
@@ -79,6 +81,7 @@ public class StudentProfileView {
     public static Stage obs = new Stage();
 
 
+    private final ActividadDAO actividadDAO = new ActividadDAO();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -88,7 +91,7 @@ public class StudentProfileView {
         txtSurname.setText(u.getApellido());
         txtEmail.setText(u.getEmail());
         txtPass.setText(u.getPassword());
-        txtDNI.setText(u.getDni().toString());
+        txtDNI.setText(u.getDni());
         txtBirth.setText(u.getFecha_nac().toString());
         txtPhone.setText(u.getTelefono().toString());
         txtTutor.setText(u.getTutor());
@@ -97,6 +100,7 @@ public class StudentProfileView {
         txtFctHours.setText(u.getRestantesfct().toString());
         txtDualTotal.setText(u.getTotalhorasdual().toString());
         txtFctTotal.setText(u.getTotalhorasfct().toString());
+
 
 
         cName.setCellValueFactory((fila)->
@@ -119,14 +123,15 @@ public class StudentProfileView {
             new SimpleStringProperty(fila.getValue().getObservaciones())
         );
 
+        //relleno la tabla con las actividades de cada usuario
+        List<Actividad> lista = actividadDAO.getAllByUser(Session.getCurrentUser());
+        table.getItems().addAll(lista);
+
+        //selecciono una actividad
         table.getSelectionModel().selectedItemProperty().addListener(((observableValue, o, t1) -> {
-            Session.setCurrentActivity((Actividad) t1);
+            Session.setCurrentActivity(t1);
             System.out.println(Session.getCurrentActivity());
         }));
-
-
-        table.getItems().addAll(Session.getCurrentActivity());
-
 
     }
 

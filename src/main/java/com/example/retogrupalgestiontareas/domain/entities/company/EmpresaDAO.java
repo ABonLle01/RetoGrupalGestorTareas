@@ -1,12 +1,13 @@
 package com.example.retogrupalgestiontareas.domain.entities.company;
 
 import com.example.retogrupalgestiontareas.domain.DAO;
+import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
 
 import java.util.ArrayList;
 
 public class EmpresaDAO implements DAO<Empresa> {
     @Override
-    public ArrayList<Empresa> getAll() {
+    public ArrayList<Empresa> getAllByUser(Usuario u) {
         return null;
     }
 

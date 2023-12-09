@@ -213,10 +213,10 @@
                 </GridPane>
                 <TableView fx:id="table" prefHeight="190.0" prefWidth="740.0">
                     <columns>
-                        <TableColumn fx:id="cName" prefWidth="75.0" text="Nombre" />
-                        <TableColumn fx:id="cHours" prefWidth="75.0" text="Horas" />
-                        <TableColumn fx:id="cType" prefWidth="75.0" text="Tipo" />
-                        <TableColumn fx:id="cDate" prefWidth="75.0" text="Fecha" />
+                        <TableColumn fx:id="cName" prefWidth="75.0" style="-fx-alignment: center;" text="Nombre" />
+                        <TableColumn fx:id="cHours" prefWidth="75.0" style="-fx-alignment: center;" text="Horas" />
+                        <TableColumn fx:id="cType" prefWidth="75.0" style="-fx-alignment: center;" text="Tipo" />
+                        <TableColumn fx:id="cDate" prefWidth="75.0" style="-fx-alignment: center;" text="Fecha" />
                         <TableColumn fx:id="cObservations" prefWidth="75.0" text="Observaciones" />
                     </columns>
                     <VBox.margin>

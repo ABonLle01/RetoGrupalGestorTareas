@@ -3,6 +3,7 @@ package com.example.retogrupalgestiontareas.controllers;
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.Session;
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
+import com.example.retogrupalgestiontareas.domain.entities.activity.ActividadDAO;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
@@ -26,6 +27,8 @@ public class AddActivityController {
     @javafx.fxml.FXML
     private Button btnActivities;
 
+    private final ActividadDAO actividadDAO = new ActividadDAO();
+
     @javafx.fxml.FXML
     public void initialize() {
         txtNombreActividad.setText("Nombre de prueba");
@@ -33,6 +36,8 @@ public class AddActivityController {
         comboTipoPractica.getItems().addAll("Dual","FCT");
         comboTipoPractica.setValue("FCT");
         dpFecha.setValue(LocalDate.now());
+
+        actividadDAO.getAllByUser(Session.getCurrentUser());
     }
 
     @javafx.fxml.FXML
@@ -47,7 +52,6 @@ public class AddActivityController {
 
     private Actividad newActivity() {
         Actividad a = new Actividad();
-
         a.setNombre(txtNombreActividad.getText());
         a.setHoras(spinnerHoras.getValue());
         a.setTipo(comboTipoPractica.getValue());

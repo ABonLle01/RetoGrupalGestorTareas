@@ -52,7 +52,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtNombreActividad" alignment="CENTER" maxWidth="538.0" prefHeight="25.0" prefWidth="538.0">
+                  <TextField fx:id="txtNombreActividad" alignment="TOP_CENTER" maxWidth="538.0" prefHeight="25.0" prefWidth="538.0">
                      <font>
                         <Font size="16.0" />
                      </font></TextField>
