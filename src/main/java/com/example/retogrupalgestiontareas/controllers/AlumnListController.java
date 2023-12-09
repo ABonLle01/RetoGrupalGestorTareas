@@ -50,7 +50,8 @@ public class AlumnListController {
             new SimpleStringProperty(fila.getValue().getEmpresa().getNombre())
         );
 
-        //he puesto las horas de dual totales, pero habrá que cambiarlo
+        //he puesto las horas de dual totales
+        //habrá que cambiarlo
         cHorasRestantes.setCellValueFactory((fila)->
             new SimpleStringProperty(fila.getValue().getTotalhorasdual()+"")
         );
