@@ -68,4 +68,5 @@ public class Usuario implements Serializable {
                 ", Empresa = " + company.getNombre() +
                 '}';
     }
+
 }
