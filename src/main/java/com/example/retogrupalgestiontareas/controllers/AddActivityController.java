@@ -37,7 +37,7 @@ public class AddActivityController {
         comboTipoPractica.setValue("FCT");
         dpFecha.setValue(LocalDate.now());
 
-        actividadDAO.getAllByUser(Session.getCurrentUser());
+//        actividadDAO.getAllByUser(Session.getCurrentUser());
     }
 
     @javafx.fxml.FXML
