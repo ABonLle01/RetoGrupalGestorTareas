@@ -44,14 +44,14 @@ public class UsuarioDAO implements DAO<Usuario> {
             Query<Usuario> q = session.createQuery("from Usuario where email=:e and password=:p", Usuario.class);
             q.setParameter("e",email);
             q.setParameter("p",pass);
-            var resultado = q.getResultList();
-            if(!resultado.isEmpty()) result = resultado.get(0);
+//            var resultado = q.getResultList();
+//            if(!resultado.isEmpty()) result = resultado.get(0);
 
-//            try{
-//                result = q.getSingleResult();
-//            } catch (Exception e) {
+            try{
+                result = q.getSingleResult();
+            } catch (Exception e) {
 //                System.out.println(e.getMessage());
-//            }
+            }
 
         }
         return result;

@@ -31,21 +31,20 @@ public class Usuario implements Serializable {
     private Integer restantesfct;
     private String observaciones;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
-    private Empresa company;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
+//    private Empresa company;
 
-/*    @OneToMany(mappedBy = "id",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<Empresa> companies = new ArrayList<>(0);*/
+    @OneToMany(mappedBy = "student")
+    private List<DiaryActivity> diary_activities;
 
-//    @OneToOne(mappedBy = "id",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-//    private Empresa company = new Empresa();
+    @ManyToOne
+    @JoinColumn(name = "company")
+    private Company company;
 
-    /*
-        Hibernate gestionará la relación entre Usuario y Actividad a través de las anotaciones @ManyToOne y @JoinColumn
-        en la clase Actividad. Esto permite que un usuario tenga muchas actividades,
-        pero cada actividad pertenece a un solo usuario.
-    */
+    @ManyToOne
+    @JoinColumn(name = "tutor")
+    private Teacher tutor;
 
     @Override
     public String toString() {
