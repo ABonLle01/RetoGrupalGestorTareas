@@ -26,7 +26,7 @@ public class Empresa implements Serializable {
     private String observaciones;
 
     @OneToMany(mappedBy = "empresa", fetch = FetchType.EAGER)
-    private List<Alumno> Alumno;
+    private List<Alumno> alumno;
 
     @Override
     public String toString() {
@@ -37,7 +37,7 @@ public class Empresa implements Serializable {
                 ", telefono=" + telefono +
                 ", email='" + email + '\'' +
                 ", observaciones='" + observaciones + '\'' +
-                ", Alumno=" + Alumno +
+                ", Alumno=" + alumno +
                 '}';
     }
 //    @Override

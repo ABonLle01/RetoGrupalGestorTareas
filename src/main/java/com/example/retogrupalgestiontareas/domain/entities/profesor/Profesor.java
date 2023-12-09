@@ -25,16 +25,16 @@ public class Profesor {
     private String password;
     private String email;
 
-    @OneToMany(mappedBy = "tutor", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "profesor", fetch = FetchType.EAGER)
     private List<Alumno> alumnos;
     @Override
     public String toString( ) {
         return "Teacher{" +
                 "id_profesor=" + id_profesor +
-                ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
+                ", nombre='" + nombre +
+                ", apellidos='" + apellidos +
+                ", password='" + password +
+                ", email='" + email +
                 ", alumnos=" + alumnos.size() +
                 '}';
     }

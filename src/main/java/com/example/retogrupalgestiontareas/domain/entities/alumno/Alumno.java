@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Data
-@Table(name = "usuario")
+@Table(name = "alumno")
 public class Alumno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,17 +28,12 @@ public class Alumno implements Serializable {
     private LocalDate fecha_nac;
     private Integer telefono;
     private String email;
-    private String tutor;
     private String password;
     private Integer totalhorasdual;
     private Integer totalhorasfct;
     private Integer restantesdual;
     private Integer restantesfct;
     private String observaciones;
-
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
-//    private Empresa company;
 
     @OneToMany(mappedBy = "alumno")
     private List<Actividad> activities;
@@ -47,23 +42,9 @@ public class Alumno implements Serializable {
     @JoinColumn(name = "id_empresa")
     private Empresa empresa;
 
-    //si profesor se cambia por tutor, da un error, si se deja como profesor dice
-    //ERROR: Unknown column 'a1_0.profesor' in 'field list'
     @ManyToOne
-    @JoinColumn(name = "profesor")
+    @JoinColumn(name = "tutor")
     private Profesor profesor;
-
-    //DA ERROR DE MAPEO DUPLICADO TUTOR
-//    @OneToMany(mappedBy = "alumno")
-//    private List<Actividad> activities;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "id_empresa")
-//    private Empresa empresa;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "tutor")
-//    private Profesor profesor;
 
     @Override
     public String toString() {
@@ -77,7 +58,7 @@ public class Alumno implements Serializable {
                 ", Nacimiento = " + fecha_nac +
                 ", Telefono = " + telefono +
                 ", Correo = " + email +
-                ", Tutor = " + tutor +
+                ", Tutor = " + profesor.getNombre() +
                 ", Contraseña = " + password +
                 ", Total horas de dual = " + totalhorasdual +
                 ", Total horas de fct = " + totalhorasfct +

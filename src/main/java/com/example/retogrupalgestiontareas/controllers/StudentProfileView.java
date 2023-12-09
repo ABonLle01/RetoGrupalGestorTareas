@@ -86,7 +86,7 @@ public class StudentProfileView {
         txtDNI.setText(u.getDni().toString());
         txtBirth.setText(u.getFecha_nac().toString());
         txtPhone.setText(u.getTelefono().toString());
-        txtTutor.setText(u.getTutor());
+        txtTutor.setText(u.getProfesor().getNombre());
         txtEmpresa.setText(u.getEmpresa().getNombre());
         txtDualHours.setText(u.getRestantesdual().toString());
         txtFctHours.setText(u.getRestantesfct().toString());
