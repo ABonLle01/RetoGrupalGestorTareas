@@ -1,18 +1,23 @@
-package com.example.retogrupalgestiontareas.domain.entities.user;
+package com.example.retogrupalgestiontareas.domain.entities.alumno;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
+import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
 import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
+import com.example.retogrupalgestiontareas.domain.entities.profesor.Profesor;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Data
-@Table(name = "usuario")
-public class Usuario implements Serializable {
+@Table(name = "alumno")
+public class Alumno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +28,6 @@ public class Usuario implements Serializable {
     private LocalDate fecha_nac;
     private Integer telefono;
     private String email;
-    private String tutor;
     private String password;
     private Integer totalhorasdual;
     private Integer totalhorasfct;
@@ -31,24 +35,21 @@ public class Usuario implements Serializable {
     private Integer restantesfct;
     private String observaciones;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
-//    private Empresa company;
-
-    @OneToMany(mappedBy = "student")
-    private List<DiaryActivity> diary_activities;
+    @OneToMany(mappedBy = "alumno")
+    private List<Actividad> activities;
 
     @ManyToOne
-    @JoinColumn(name = "company")
-    private Company company;
+    @JoinColumn(name = "id_empresa")
+    private Empresa empresa;
 
     @ManyToOne
     @JoinColumn(name = "tutor")
-    private Teacher tutor;
+    private Profesor profesor;
 
     @Override
     public String toString() {
-        return "Usuario{" +
+
+        return "Alumno{" +
                 "ID = " + id +
                 ", Nombre = " + nombre +
                 ", Apellido = " + apellido +
@@ -57,15 +58,14 @@ public class Usuario implements Serializable {
                 ", Nacimiento = " + fecha_nac +
                 ", Telefono = " + telefono +
                 ", Correo = " + email +
-                ", Tutor = " + tutor +
+                ", Tutor = " + profesor.getNombre() +
                 ", Contraseña = " + password +
                 ", Total horas de dual = " + totalhorasdual +
                 ", Total horas de fct = " + totalhorasfct +
                 ", Horas restantes dual = " + restantesdual +
                 ", Horas restantes fct=" + restantesfct +
                 ", Observaciones = " + observaciones +
-                ", Empresa = " + company.getNombre() +
+                ", Empresa = " + empresa.getNombre() +
                 '}';
     }
-
 }

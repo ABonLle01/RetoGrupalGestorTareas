@@ -1,17 +1,14 @@
 package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
-import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
-import com.example.retogrupalgestiontareas.domain.entities.user.UsuarioDAO;
+import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.alumno.AlumnoDAO;
 import com.example.retogrupalgestiontareas.Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
-import java.time.LocalDate;
-
-import com.example.retogrupalgestiontareas.*;
 
 public class  LoginController {
 
@@ -36,7 +33,7 @@ public class  LoginController {
             info.setStyle("-fx-text-fill: red;");
 
         } else {
-            Usuario u = (new UsuarioDAO()).validateUser(email, pass);
+            Alumno u = (new AlumnoDAO()).validateUser(email, pass);
 
             if (u == null) {
                 info.setText("No encontrado");
@@ -45,7 +42,9 @@ public class  LoginController {
                 info.setText("Usuario: " + email + "(" + pass + ") correcto");
                 info.setStyle("-fx-text-fill: green;");
 
-                Session.setCurrentUser(u);
+                Session.setAlumnoLogged(u);
+
+
 
                 try {
                     if(u.getRol().equals("Alumno")){
@@ -61,7 +60,6 @@ public class  LoginController {
 
 
         }
-
 
 
 //        if(u.getRol().equals("Alumno")){
