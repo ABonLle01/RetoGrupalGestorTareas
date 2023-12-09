@@ -1,13 +1,12 @@
 package com.example.retogrupalgestiontareas.controllers;
 
-import com.example.retogrupalgestiontareas.App;
 import javafx.event.*;
 import javafx.scene.control.*;
 
 import java.io.IOException;
 
-import static com.example.retogrupalgestiontareas.controllers.StudentProfileView.obs;
-import static com.example.retogrupalgestiontareas.controllers.StudentProfileView.pass;
+import static com.example.retogrupalgestiontareas.controllers.StudentProfileAlumn.obs;
+import static com.example.retogrupalgestiontareas.controllers.StudentProfileAlumn.pass;
 import static com.example.retogrupalgestiontareas.controllers.TeacherProfileController.profile;
 
 

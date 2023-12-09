@@ -3,15 +3,17 @@ package com.example.retogrupalgestiontareas.controllers;
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.Session;
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
-import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.activity.ActividadDAO;
+import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.*;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
-public class StudentProfileView {
+public class StudentProfileAlumn {
     @javafx.fxml.FXML
     private TextField txtName;
     @javafx.fxml.FXML
@@ -60,12 +62,6 @@ public class StudentProfileView {
     private Button btnActualizar;
     @javafx.fxml.FXML
     private Button btnEliminar;
-    @javafx.fxml.FXML
-    private Button btnCambiar;
-    @javafx.fxml.FXML
-    private Button btnCerrar;
-    @javafx.fxml.FXML
-    private Button btnAñadir;
 
     //este es el stage para el modal de cambiar de contraseña
     public static Stage pass = new Stage();
@@ -73,25 +69,32 @@ public class StudentProfileView {
     //este es el stage para el modal de observaciones
     public static Stage obs = new Stage();
 
+    private final ActividadDAO actividadDAO = new ActividadDAO();
+    @javafx.fxml.FXML
+    private Button btnAñadir;
+    @javafx.fxml.FXML
+    private Button btnCambiar;
+    @javafx.fxml.FXML
+    private Button btnCerrar;
 
 
     @javafx.fxml.FXML
     public void initialize() {
-        Alumno u = Session.getAlumnoLogged();
+        Alumno a = Session.getCurrentAlumn();
 
-        txtName.setText(u.getNombre());
-        txtSurname.setText(u.getApellido());
-        txtEmail.setText(u.getEmail());
-        txtPass.setText(u.getPassword());
-        txtDNI.setText(u.getDni().toString());
-        txtBirth.setText(u.getFecha_nac().toString());
-        txtPhone.setText(u.getTelefono().toString());
-        txtTutor.setText(u.getProfesor().getNombre());
-        txtEmpresa.setText(u.getEmpresa().getNombre());
-        txtDualHours.setText(u.getRestantesdual().toString());
-        txtFctHours.setText(u.getRestantesfct().toString());
-        txtDualTotal.setText(u.getTotalhorasdual().toString());
-        txtFctTotal.setText(u.getTotalhorasfct().toString());
+        txtName.setText(a.getNombre());
+        txtSurname.setText(a.getApellido());
+        txtEmail.setText(a.getEmail());
+        txtPass.setText(a.getPassword());
+        txtDNI.setText(a.getDni());
+        txtBirth.setText(a.getFecha_nac().toString());
+        txtPhone.setText(a.getTelefono().toString());
+        txtTutor.setText(a.getProfesor().getNombre());
+        txtEmpresa.setText(a.getEmpresa().getNombre());
+        txtDualHours.setText(a.getRestantesdual().toString());
+        txtFctHours.setText(a.getRestantesfct().toString());
+        txtDualTotal.setText(a.getTotalhorasdual().toString());
+        txtFctTotal.setText(a.getTotalhorasfct().toString());
 
 
         cName.setCellValueFactory((fila)->
@@ -114,13 +117,16 @@ public class StudentProfileView {
             new SimpleStringProperty(fila.getValue().getObservaciones())
         );
 
+        List<Actividad> lista = actividadDAO.getAllByAlumno(Session.getCurrentAlumn());
+        table.getItems().addAll(lista);
+
         table.getSelectionModel().selectedItemProperty().addListener(((observableValue, o, t1) -> {
-            Session.setCurrentActivity((Actividad) t1);
+            Session.setCurrentActivity(t1);
             System.out.println(Session.getCurrentActivity());
         }));
 
 
-        table.getItems().addAll(Session.getCurrentActivity());
+
 
 
     }
@@ -166,4 +172,5 @@ public class StudentProfileView {
     public void goToActivities(ActionEvent actionEvent) throws IOException {
         App.changeScene("addActivity-view.fxml","Añadir Actividad");
     }
+
 }

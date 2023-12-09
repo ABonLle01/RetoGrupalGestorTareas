@@ -2,7 +2,7 @@ package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
-import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import javafx.event.*;
 import javafx.scene.control.*;
 

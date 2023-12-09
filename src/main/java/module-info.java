@@ -14,10 +14,10 @@ module com.example.retogrupalgestiontareas {
 
     opens com.example.retogrupalgestiontareas.domain;
 
-    opens com.example.retogrupalgestiontareas.domain.entities.alumno;
+    opens com.example.retogrupalgestiontareas.domain.entities.alumn;
     opens com.example.retogrupalgestiontareas.domain.entities.activity;
     opens com.example.retogrupalgestiontareas.domain.entities.company;
-    opens com.example.retogrupalgestiontareas.domain.entities.profesor;
+    opens com.example.retogrupalgestiontareas.domain.entities.teacher;
 
     exports com.example.retogrupalgestiontareas;
     exports com.example.retogrupalgestiontareas.controllers;

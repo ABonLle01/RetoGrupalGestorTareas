@@ -3,7 +3,7 @@ package com.example.retogrupalgestiontareas.domain.entities.activity;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -42,4 +42,6 @@ public class Actividad implements Serializable {
                 ", Usuario = " + alumno.getNombre() +
                 '}';
     }
+
+
 }

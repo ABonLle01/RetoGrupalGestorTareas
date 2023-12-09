@@ -1,4 +1,4 @@
-package com.example.retogrupalgestiontareas.domain.entities.alumno;
+package com.example.retogrupalgestiontareas.domain.entities.alumn;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
 import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
-import com.example.retogrupalgestiontareas.domain.entities.profesor.Profesor;
+import com.example.retogrupalgestiontareas.domain.entities.teacher.Profesor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -68,4 +68,6 @@ public class Alumno implements Serializable {
                 ", Empresa = " + empresa.getNombre() +
                 '}';
     }
+
+
 }

@@ -37,13 +37,13 @@ public class AddActivityController {
         comboTipoPractica.setValue("FCT");
         dpFecha.setValue(LocalDate.now());
 
-//        actividadDAO.getAllByUser(Session.getCurrentUser());
+        actividadDAO.getAllByAlumno(Session.getCurrentAlumn());
     }
 
     @javafx.fxml.FXML
     public void addActivity(ActionEvent actionEvent) throws IOException {
         Actividad activity = newActivity();
-        activity.setAlumno(Session.getAlumnoLogged());
+        activity.setAlumno(Session.getCurrentAlumn());
         Session.setCurrentActivity(activity);
 
         System.out.println(Session.getCurrentActivity());
@@ -62,8 +62,6 @@ public class AddActivityController {
 
     @javafx.fxml.FXML
     public void goToActivities(ActionEvent actionEvent) throws IOException {
-
-
         App.changeScene("studentProfileStudent-view.fxml","Detalles Alumno");
 
     }

@@ -15,8 +15,8 @@
 
         <mapping class="com.example.retogrupalgestiontareas.domain.entities.activity.Actividad"/>
         <mapping class="com.example.retogrupalgestiontareas.domain.entities.company.Empresa"/>
-        <mapping class="com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno"/>
-        <mapping class="com.example.retogrupalgestiontareas.domain.entities.profesor.Profesor"/>
+        <mapping class="com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno"/>
+        <mapping class="com.example.retogrupalgestiontareas.domain.entities.teacher.Profesor"/>
 
     </session-factory>
 </hibernate-configuration>

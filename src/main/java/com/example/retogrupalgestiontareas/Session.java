@@ -2,14 +2,14 @@ package com.example.retogrupalgestiontareas;
 
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
 import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
-import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
-import com.example.retogrupalgestiontareas.domain.entities.profesor.Profesor;
+import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.teacher.Profesor;
 
 import lombok.*;
 public class Session {
     @Getter
     @Setter
-    private static Alumno alumnoLogged;
+    private static Alumno currentAlumn;
 
     @Getter
     @Setter
@@ -21,12 +21,13 @@ public class Session {
 
     @Setter
     @Getter
-    private static Profesor teacherLogged;
+    private static Profesor currentTeacher;
 
     public static void logOut(){
-        teacherLogged = null;
-        alumnoLogged = null;
+        currentAlumn = null;
+        currentTeacher = null;
     }
+
 
 
 }

@@ -3,7 +3,7 @@ package com.example.retogrupalgestiontareas.domain.entities.company;
 import java.io.Serializable;
 import java.util.List;
 
-import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

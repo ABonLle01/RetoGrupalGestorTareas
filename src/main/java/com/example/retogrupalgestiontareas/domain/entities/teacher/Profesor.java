@@ -1,6 +1,6 @@
-package com.example.retogrupalgestiontareas.domain.entities.profesor;
+package com.example.retogrupalgestiontareas.domain.entities.teacher;
 
-import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

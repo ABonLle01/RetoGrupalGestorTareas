@@ -35,7 +35,7 @@
                   <font>
                      <Font size="16.0" />
                   </font></Label>
-               <TextField fx:id="txtEmail" text="sandra@email.com" GridPane.columnIndex="1">
+               <TextField fx:id="txtEmail" text="fernando@email.com" GridPane.columnIndex="1">
                   <font>
                      <Font size="16.0" />
                   </font></TextField>

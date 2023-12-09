@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.StudentProfileView">
+<BorderPane prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.StudentProfileAlumn">
     <top>
         <FlowPane alignment="CENTER" hgap="20.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
@@ -201,7 +201,7 @@
                                 <Font size="16.0" />
                             </font>
                         </TextField>
-                        <Button fx:id="btnObserv" mnemonicParsing="false" onAction="#addObservations" prefHeight="25.0" prefWidth="124.0" text="¿Observaciones?" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                        <Button fx:id="btnObserv" disable="true" mnemonicParsing="false" onAction="#addObservations" prefHeight="25.0" prefWidth="124.0" text="¿Observaciones?" GridPane.columnIndex="5" GridPane.rowIndex="4">
                             <font>
                                 <Font size="10.0" />
                             </font>
@@ -231,17 +231,17 @@
                         <Insets bottom="10.0" top="30.0" />
                     </VBox.margin>
                     <children>
-                        <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#save" text="Guardar">
+                        <Button fx:id="btnGuardar" disable="true" mnemonicParsing="false" onAction="#save" text="Guardar">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#update" text="Actualizar">
+                        <Button fx:id="btnActualizar" disable="true" mnemonicParsing="false" onAction="#update" text="Actualizar">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE">
+                        <Button fx:id="btnEliminar" disable="true" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="16.0" />
                             </font>

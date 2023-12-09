@@ -16,9 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.StudentProfileView">
+<BorderPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.StudentProfileTeacher">
    <top>
-      <FlowPane alignment="CENTER" hgap="370.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <FlowPane alignment="CENTER" hgap="310.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Perfil del alumno">
                <font>
@@ -66,7 +66,7 @@
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="txtHoursDual" GridPane.columnIndex="5">
+                  <TextField fx:id="txtDualHours" GridPane.columnIndex="5">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -186,17 +186,13 @@
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="btnObserv" mnemonicParsing="false" onAction="#addObservations" prefHeight="25.0" prefWidth="124.0" text="¿Observaciones?" GridPane.columnIndex="5" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Button>
+                  <Button fx:id="btnObserv" mnemonicParsing="false" onAction="#addObservations" prefHeight="25.0" prefWidth="124.0" text="¿Observaciones?" GridPane.columnIndex="5" GridPane.rowIndex="4" />
                </children>
                <VBox.margin>
                   <Insets left="50.0" right="50.0" />
                </VBox.margin>
             </GridPane>
-            <TableView fx:id="tAlumn" prefHeight="190.0" prefWidth="740.0">
+            <TableView fx:id="table" prefHeight="190.0" prefWidth="740.0">
               <columns>
                 <TableColumn fx:id="cName" prefWidth="75.0" style="-fx-alignment: center;" text="Nombre" />
                 <TableColumn fx:id="cHours" prefWidth="75.0" style="-fx-alignment: center;" text="Horas" />
