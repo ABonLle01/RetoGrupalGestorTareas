@@ -1,8 +1,9 @@
 package com.example.retogrupalgestiontareas.domain.entities.company;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
+import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,11 +26,7 @@ public class Empresa implements Serializable {
     private String observaciones;
 
     @OneToMany(mappedBy = "empresa", fetch = FetchType.EAGER)
-    private List<Student> student;
-
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private List<Alumno> Alumno;
 
     @Override
     public String toString() {
@@ -40,8 +37,19 @@ public class Empresa implements Serializable {
                 ", telefono=" + telefono +
                 ", email='" + email + '\'' +
                 ", observaciones='" + observaciones + '\'' +
-                ", student=" + student +
-                ", usuario=" + usuario +
+                ", Alumno=" + Alumno +
                 '}';
     }
+//    @Override
+//    public String toString() {
+//        return "Empresa{" +
+//                "id=" + id +
+//                ", nombre='" + nombre + '\'' +
+//                ", responsable='" + responsable + '\'' +
+//                ", telefono=" + telefono +
+//                ", email='" + email + '\'' +
+//                ", observaciones='" + observaciones + '\'' +
+//                ", alumno=" + getAlumno() +
+//                '}';
+//    }
 }

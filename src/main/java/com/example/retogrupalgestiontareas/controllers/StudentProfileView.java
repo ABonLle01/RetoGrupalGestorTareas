@@ -3,18 +3,13 @@ package com.example.retogrupalgestiontareas.controllers;
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.Session;
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
-import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
-import javafx.beans.property.SimpleIntegerProperty;
+import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.event.*;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 public class StudentProfileView {
     @javafx.fxml.FXML
@@ -82,7 +77,7 @@ public class StudentProfileView {
 
     @javafx.fxml.FXML
     public void initialize() {
-        Usuario u = Session.getCurrentUser();
+        Alumno u = Session.getAlumnoLogged();
 
         txtName.setText(u.getNombre());
         txtSurname.setText(u.getApellido());
@@ -92,7 +87,7 @@ public class StudentProfileView {
         txtBirth.setText(u.getFecha_nac().toString());
         txtPhone.setText(u.getTelefono().toString());
         txtTutor.setText(u.getTutor());
-        txtEmpresa.setText(u.getCompany().getNombre());
+        txtEmpresa.setText(u.getEmpresa().getNombre());
         txtDualHours.setText(u.getRestantesdual().toString());
         txtFctHours.setText(u.getRestantesfct().toString());
         txtDualTotal.setText(u.getTotalhorasdual().toString());
@@ -163,7 +158,7 @@ public class StudentProfileView {
 
     @javafx.fxml.FXML
     public void logout(ActionEvent actionEvent) throws IOException {
-        Session.setCurrentUser(null);
+        Session.logOut();
         App.changeScene("login-view.fxml","Iniciar Sesión");
     }
 

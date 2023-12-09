@@ -38,7 +38,7 @@ public class AddActivityController {
     @javafx.fxml.FXML
     public void addActivity(ActionEvent actionEvent) throws IOException {
         Actividad activity = newActivity();
-        activity.setUsuario(Session.getCurrentUser());
+        activity.setAlumno(Session.getAlumnoLogged());
         Session.setCurrentActivity(activity);
 
         System.out.println(Session.getCurrentActivity());
