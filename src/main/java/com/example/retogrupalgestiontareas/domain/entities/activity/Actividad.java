@@ -3,10 +3,14 @@ package com.example.retogrupalgestiontareas.domain.entities.activity;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
+import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Data
 @Table(name = "actividad")
@@ -23,7 +27,8 @@ public class Actividad implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private Alumno alumno;
+
 
     @Override
     public String toString() {
@@ -34,7 +39,7 @@ public class Actividad implements Serializable {
                 ", Fecha = " + fecha +
                 ", Tipo = " + tipo +
                 ", Observaciones = " + observaciones +
-                ", Usuario = " + usuario.getNombre() +
+                ", Usuario = " + alumno.getNombre() +
                 '}';
     }
 }

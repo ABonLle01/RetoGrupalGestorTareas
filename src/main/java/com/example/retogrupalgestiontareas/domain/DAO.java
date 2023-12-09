@@ -1,12 +1,11 @@
 package com.example.retogrupalgestiontareas.domain;
 
-import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public interface DAO<T> {
 
-    public ArrayList<T> getAllByUser(Usuario u);
+    public List<T> getAll();
 
     public T get(Long id);
 
@@ -15,4 +14,6 @@ public interface DAO<T> {
     public void update(T data);
 
     public void delete(T data);
+
+
 }

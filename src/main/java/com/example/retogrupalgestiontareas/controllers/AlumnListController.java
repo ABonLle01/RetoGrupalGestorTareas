@@ -2,7 +2,7 @@ package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
-import com.example.retogrupalgestiontareas.domain.entities.user.Usuario;
+import com.example.retogrupalgestiontareas.domain.entities.alumno.Alumno;
 import javafx.event.*;
 import javafx.scene.control.*;
 
@@ -17,15 +17,15 @@ public class AlumnListController {
     private MenuItem miProfile;
 
     @javafx.fxml.FXML
-    private TableView<Usuario> tblAlumnos;
+    private TableView<Alumno> tblAlumnos;
     @javafx.fxml.FXML
-    private TableColumn<Usuario, String> cNombre;
+    private TableColumn<Alumno, String> cNombre;
     @javafx.fxml.FXML
-    private TableColumn<Usuario, String> cApellidos;
+    private TableColumn<Alumno, String> cApellidos;
     @javafx.fxml.FXML
     private TableColumn<Empresa, String> cEmpresa;
     @javafx.fxml.FXML
-    private TableColumn<Usuario, Integer> cHorasRestantes;
+    private TableColumn<Alumno, Integer> cHorasRestantes;
 
     @javafx.fxml.FXML
     private Button btnDelete;

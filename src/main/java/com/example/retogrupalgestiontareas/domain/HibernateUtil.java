@@ -7,33 +7,31 @@ import org.hibernate.cfg.Configuration;
 @Log
 public class HibernateUtil {
 
-    private static final SessionFactory sf;
+    private static SessionFactory sf = null;
 
-    static{
-        Configuration cfg = new Configuration();
-        cfg.configure();
-        sf = cfg.buildSessionFactory();
-
-        System.out.println("Sesion factory");
-        System.out.println(sf);
+    static {
+        try {
+            Configuration cfg = new Configuration();
+            sf = cfg.configure().buildSessionFactory();
+            log.info("SessionFactory creada con éxito!");
+        } catch (Exception e) {
+            log.severe("Error al crear SessionFactory: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
-//    No funciona
 
-    /*private static SessionFactory sf = null;
+//    private static final SessionFactory sf;
+//
+//    static{
+//        Configuration cfg = new Configuration();
+//        cfg.configure();
+//        sf = cfg.buildSessionFactory();
+//
+//        System.out.println("Sesion factory");
+//        System.out.println(sf);
+//    }
 
-    static{
-
-        try{
-            Configuration cfg = new Configuration();
-            cfg.configure();
-            sf = cfg.buildSessionFactory();
-            log.info("SessionFactory creada con exito!");
-        } catch (Exception e) {
-            log.severe("Error al crear SessionFactory()");
-        }
-
-    }*/
 
     public static SessionFactory getSessionFactory(){
         return sf;
