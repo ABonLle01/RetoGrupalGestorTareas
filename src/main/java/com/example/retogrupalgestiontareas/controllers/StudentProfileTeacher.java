@@ -2,15 +2,19 @@ package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.Session;
+import com.example.retogrupalgestiontareas.domain.HibernateUtil;
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
 import com.example.retogrupalgestiontareas.domain.entities.activity.ActividadDAO;
 import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
+import com.example.retogrupalgestiontareas.domain.entities.alumn.AlumnoDAO;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.*;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class StudentProfileTeacher {
@@ -71,6 +75,8 @@ public class StudentProfileTeacher {
 
     private final ActividadDAO actividadDAO = new ActividadDAO();
 
+    private AlumnoDAO alumnoDAO = new AlumnoDAO();
+
     @javafx.fxml.FXML
     public void initialize(){
         Alumno a = Session.getCurrentAlumn();
@@ -129,6 +135,23 @@ public class StudentProfileTeacher {
 
     @javafx.fxml.FXML
     public void save(ActionEvent actionEvent) {
+        Alumno alumno = Session.getCurrentAlumn();
+        alumno.setNombre(txtName.getText());
+        alumno.setApellido(txtSurname.getText());
+        alumno.setEmail(txtEmail.getText());
+        alumno.setPassword(txtPass.getText());
+        alumno.setDni(txtDNI.getText());
+        alumno.setFecha_nac(LocalDate.parse(String.valueOf(txtBirth.getText())));
+        alumno.setTelefono(Integer.valueOf(txtPhone.getText()));
+//        alumno.setProfesor(txtTutor.getText()); no funciona espera un objeto profesor
+//        alumno.setEmpresa(txtEmpresa.getText()); no funciona, espera un objeto empresa
+        alumno.setRestantesdual(Integer.valueOf(txtDualHours.getText()));
+        alumno.setRestantesfct(Integer.valueOf(txtFctHours.getText()));
+        alumno.setTotalhorasdual(Integer.valueOf(txtDualTotal.getText()));
+        alumno.setTotalhorasfct(Integer.valueOf(txtFctHours.getText()));
+
+
+        this.alumnoDAO.save(alumno);
     }
 
     @javafx.fxml.FXML

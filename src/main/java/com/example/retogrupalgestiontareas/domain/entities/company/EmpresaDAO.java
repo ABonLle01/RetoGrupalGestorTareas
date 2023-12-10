@@ -2,7 +2,6 @@ package com.example.retogrupalgestiontareas.domain.entities.company;
 
 import com.example.retogrupalgestiontareas.domain.DAO;
 import com.example.retogrupalgestiontareas.domain.HibernateUtil;
-import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
 import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -42,8 +41,9 @@ public class EmpresaDAO implements DAO<Empresa> {
     }
 
     @Override
-    public void update(Empresa data) {
+    public Alumno update(Empresa data) {
 
+        return null;
     }
 
     @Override
