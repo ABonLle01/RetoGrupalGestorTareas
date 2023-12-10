@@ -2,7 +2,6 @@ package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
 import com.example.retogrupalgestiontareas.Session;
-import com.example.retogrupalgestiontareas.domain.HibernateUtil;
 import com.example.retogrupalgestiontareas.domain.entities.activity.Actividad;
 import com.example.retogrupalgestiontareas.domain.entities.activity.ActividadDAO;
 import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
@@ -11,7 +10,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.event.*;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -127,7 +125,6 @@ public class StudentProfileTeacher {
     }
 
 
-
     @javafx.fxml.FXML
     public void addObservations(ActionEvent actionEvent) throws IOException {
         App.modal(obs,"obsModal-view.fxml");
@@ -143,8 +140,8 @@ public class StudentProfileTeacher {
         alumno.setDni(txtDNI.getText());
         alumno.setFecha_nac(LocalDate.parse(String.valueOf(txtBirth.getText())));
         alumno.setTelefono(Integer.valueOf(txtPhone.getText()));
-//        alumno.setProfesor(txtTutor.getText()); no funciona espera un objeto profesor
-//        alumno.setEmpresa(txtEmpresa.getText()); no funciona, espera un objeto empresa
+//      alumno.setProfesor(txtTutor.getText()); no funciona espera un objeto profesor
+//      alumno.setEmpresa(txtEmpresa.getText()); no funciona, espera un objeto empresa
         alumno.setRestantesdual(Integer.valueOf(txtDualHours.getText()));
         alumno.setRestantesfct(Integer.valueOf(txtFctHours.getText()));
         alumno.setTotalhorasdual(Integer.valueOf(txtDualTotal.getText()));
@@ -153,6 +150,7 @@ public class StudentProfileTeacher {
 
         this.alumnoDAO.save(alumno);
     }
+
     @javafx.fxml.FXML
     public void update(ActionEvent actionEvent) {
     }

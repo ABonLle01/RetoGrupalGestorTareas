@@ -54,15 +54,6 @@ public class StudentProfileAlumn {
     @javafx.fxml.FXML
     private TableColumn<Actividad, String> cObservations;
 
-    @javafx.fxml.FXML
-    private Button btnObserv;
-    @javafx.fxml.FXML
-    private Button btnGuardar;
-    @javafx.fxml.FXML
-    private Button btnActualizar;
-    @javafx.fxml.FXML
-    private Button btnEliminar;
-
     //este es el stage para el modal de cambiar de contraseña
     public static Stage pass = new Stage();
 
@@ -70,12 +61,7 @@ public class StudentProfileAlumn {
     public static Stage obs = new Stage();
 
     private final ActividadDAO actividadDAO = new ActividadDAO();
-    @javafx.fxml.FXML
-    private Button btnAñadir;
-    @javafx.fxml.FXML
-    private Button btnCambiar;
-    @javafx.fxml.FXML
-    private Button btnCerrar;
+
 
 
     @javafx.fxml.FXML
@@ -137,25 +123,13 @@ public class StudentProfileAlumn {
     }
 
 
-    @javafx.fxml.FXML
-    public void save(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void update(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void delete(ActionEvent actionEvent) {
-    }
-
 
     @javafx.fxml.FXML
     public void goToChange(ActionEvent actionEvent) throws IOException {
         App.modal(pass,"passModal-view.fxml");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void addObservations(ActionEvent actionEvent) throws IOException {
         App.modal(obs,"obsModal-view.fxml");
     }
