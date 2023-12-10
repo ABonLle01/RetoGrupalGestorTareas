@@ -153,7 +153,6 @@ public class StudentProfileTeacher {
 
         this.alumnoDAO.save(alumno);
     }
-
     @javafx.fxml.FXML
     public void update(ActionEvent actionEvent) {
     }
