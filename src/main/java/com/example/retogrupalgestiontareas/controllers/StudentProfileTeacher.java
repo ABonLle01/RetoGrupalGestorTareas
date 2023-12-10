@@ -121,6 +121,7 @@ public class StudentProfileTeacher {
     }
 
 
+
     @javafx.fxml.FXML
     public void addObservations(ActionEvent actionEvent) throws IOException {
         App.modal(obs,"obsModal-view.fxml");
