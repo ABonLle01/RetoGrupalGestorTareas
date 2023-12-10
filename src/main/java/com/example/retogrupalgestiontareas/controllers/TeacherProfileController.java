@@ -1,6 +1,8 @@
 package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
+import com.example.retogrupalgestiontareas.Session;
+import com.example.retogrupalgestiontareas.domain.entities.teacher.Profesor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,6 +30,16 @@ public class TeacherProfileController {
     private Button btnSave;
 
     public static Stage profile = new Stage();
+
+    @javafx.fxml.FXML
+    public void initialize(){
+        Profesor p = Session.getCurrentTeacher();
+
+        txtNombre.setText(p.getNombre());
+        txtApellidos.setText(p.getApellidos());
+        txtEmail.setText(p.getEmail());
+
+    }
 
     @javafx.fxml.FXML
     public void back(ActionEvent actionEvent) throws IOException {

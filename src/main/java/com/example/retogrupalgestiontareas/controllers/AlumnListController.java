@@ -37,6 +37,7 @@ public class AlumnListController {
 
     @javafx.fxml.FXML
     public void initialize() {
+        Session.setCurrentCompany(null);
 
         cNombre.setCellValueFactory((fila)->
             new SimpleStringProperty(fila.getValue().getNombre())

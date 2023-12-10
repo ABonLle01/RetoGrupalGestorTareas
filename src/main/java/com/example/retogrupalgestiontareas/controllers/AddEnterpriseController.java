@@ -1,6 +1,8 @@
 package com.example.retogrupalgestiontareas.controllers;
 
 import com.example.retogrupalgestiontareas.App;
+import com.example.retogrupalgestiontareas.Session;
+import com.example.retogrupalgestiontareas.domain.entities.company.Empresa;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
@@ -24,8 +26,10 @@ public class AddEnterpriseController {
     private Button btnAlumns;
 
 
+
     @javafx.fxml.FXML
     public void initialize() {
+        Session.setCurrentCompany(null);
 
     }
 
@@ -36,6 +40,16 @@ public class AddEnterpriseController {
 
     @javafx.fxml.FXML
     public void addEnterprise(ActionEvent actionEvent) throws IOException {
+        Empresa e = new Empresa();
+
+        if(txtNombre.getText().length()>1) e.setNombre(txtNombre.getText());
+        if(txtResponsable.getText().length()>1) e.setResponsable(txtResponsable.getText());
+        if(txtTelefono.getText().length()>8) e.setTelefono(Integer.valueOf(txtTelefono.getText()));
+        if(txtEmail.getText().length()>4) e.setEmail(txtEmail.getText());
+        e.setObservaciones(taObservaciones.getText());
+
+        Session.setCurrentCompany(e);
+
         App.changeScene("enterpriseList-view.fxml","Lista de empresas");
     }
 

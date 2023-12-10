@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.EnterpriseListController">
+<BorderPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retogrupalgestiontareas.controllers.EnterpriseListController">
    <top>
       <FlowPane alignment="CENTER" hgap="499.0">
          <BorderPane.margin>
@@ -42,11 +41,11 @@
    <center>
       <TableView fx:id="tblEmpresas" onMouseClicked="#selectedEnterprise" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="cNombre" prefWidth="75.0" text="Nombre" />
-          <TableColumn fx:id="cResponsable" prefWidth="75.0" text="Responsable" />
-            <TableColumn fx:id="cTelefono" prefWidth="75.0" text="Teléfono" />
-            <TableColumn fx:id="cEmail" prefWidth="75.0" text="Email" />
-            <TableColumn fx:id="cAlumno" prefWidth="75.0" text="Alumno" />
+          <TableColumn fx:id="cNombre" prefWidth="75.0" style="-fx-alignment: center;" text="Nombre" />
+          <TableColumn fx:id="cResponsable" prefWidth="75.0" style="-fx-alignment: center;" text="Responsable" />
+            <TableColumn fx:id="cTelefono" prefWidth="75.0" style="-fx-alignment: center;" text="Teléfono" />
+            <TableColumn fx:id="cEmail" prefWidth="75.0" style="-fx-alignment: center;" text="Email" />
+            <TableColumn fx:id="cAlumno" prefWidth="75.0" style="-fx-alignment: center;" text="Alumno" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />

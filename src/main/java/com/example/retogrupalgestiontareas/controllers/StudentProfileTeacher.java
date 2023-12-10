@@ -8,6 +8,7 @@ import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.*;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
@@ -66,6 +67,7 @@ public class StudentProfileTeacher {
     @javafx.fxml.FXML
     private Button btnEliminar;
 
+    public static Stage obs = new Stage();
 
     private final ActividadDAO actividadDAO = new ActividadDAO();
 
@@ -118,8 +120,10 @@ public class StudentProfileTeacher {
 
     }
 
+
     @javafx.fxml.FXML
-    public void addObservations(ActionEvent actionEvent) {
+    public void addObservations(ActionEvent actionEvent) throws IOException {
+        App.modal(obs,"obsModal-view.fxml");
     }
 
     @javafx.fxml.FXML
