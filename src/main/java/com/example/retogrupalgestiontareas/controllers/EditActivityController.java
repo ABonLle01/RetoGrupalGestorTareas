@@ -10,7 +10,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class AddActivityController {
+public class EditActivityController {
     @javafx.fxml.FXML
     private TextField txtNombreActividad;
     @javafx.fxml.FXML
@@ -31,11 +31,13 @@ public class AddActivityController {
 
     @javafx.fxml.FXML
     public void initialize() {
-        txtNombreActividad.setText("Nombre de actividad");
-        spinnerHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10,1,1));
+        Actividad activity = Session.getCurrentActivity();
+        txtNombreActividad.setText(activity.getNombre());
+        spinnerHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10,activity.getHoras(),1));
         comboTipoPractica.getItems().addAll("Dual","FCT");
-        comboTipoPractica.setValue("FCT");
-        dpFecha.setValue(LocalDate.now());
+        comboTipoPractica.setValue(activity.getTipo());
+        dpFecha.setValue(activity.getFecha());
+        txtObservaciones.setText(activity.getObservaciones());
 
         actividadDAO.getAllByAlumno(Session.getCurrentAlumn());
     }
@@ -46,7 +48,7 @@ public class AddActivityController {
         activity.setAlumno(Session.getCurrentAlumn());
         Session.setCurrentActivity(activity);
 
-        System.out.println("Este es el addActivity");
+        System.out.println("Este es el editActivity");
         System.out.println(Session.getCurrentActivity());
         this.actividadDAO.save(activity);
         App.changeScene("studentProfileStudent-view.fxml","Detalles Alumno");
@@ -54,6 +56,7 @@ public class AddActivityController {
 
     private Actividad newActivity() {
         Actividad a = new Actividad();
+        a.setId(Session.getCurrentActivity().getId());
         a.setNombre(txtNombreActividad.getText());
         a.setHoras(spinnerHoras.getValue());
         a.setTipo(comboTipoPractica.getValue());

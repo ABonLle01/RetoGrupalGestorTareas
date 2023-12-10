@@ -123,6 +123,11 @@ public class StudentProfileAlumn {
         table.getSelectionModel().selectedItemProperty().addListener(((observableValue, o, t1) -> {
             Session.setCurrentActivity(t1);
             System.out.println(Session.getCurrentActivity());
+            try {
+                App.changeScene("editActivity-view.fxml","Editar Actividad");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }));
 
 

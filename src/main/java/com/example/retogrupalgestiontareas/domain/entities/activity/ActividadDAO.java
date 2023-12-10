@@ -6,6 +6,7 @@ import com.example.retogrupalgestiontareas.domain.HibernateUtil;
 
 import com.example.retogrupalgestiontareas.domain.entities.alumn.Alumno;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -39,10 +40,28 @@ public class ActividadDAO implements DAO<Actividad> {
 
     @Override
     public Actividad save(Actividad data) {
-        return null;
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(data);
+            transaction.commit();
+            return data;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
     }
 
-    @Override
+        @Override
     public void update(Actividad data) {
 
     }
