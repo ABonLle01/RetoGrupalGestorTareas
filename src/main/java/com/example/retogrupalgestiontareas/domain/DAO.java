@@ -14,7 +14,7 @@ public interface DAO<T> {
 
     public T save(T data);
 
-    public void update(T data);
+    public Alumno update(T data);
 
     public void delete(T data);
 

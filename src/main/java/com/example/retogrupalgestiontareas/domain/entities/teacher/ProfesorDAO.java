@@ -48,8 +48,9 @@ public class ProfesorDAO implements DAO<Profesor> {
     }
 
     @Override
-    public void update(Profesor data) {
+    public Alumno update(Profesor data) {
 
+        return null;
     }
 
     @Override

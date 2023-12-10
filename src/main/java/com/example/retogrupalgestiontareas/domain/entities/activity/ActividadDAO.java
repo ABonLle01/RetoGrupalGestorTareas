@@ -62,9 +62,10 @@ public class ActividadDAO implements DAO<Actividad> {
     }
 
         @Override
-    public void update(Actividad data) {
+    public Alumno update(Actividad data) {
 
-    }
+            return null;
+        }
 
     @Override
     public void delete(Actividad data) {

@@ -4,6 +4,7 @@ import com.example.retogrupalgestiontareas.domain.DAO;
 import com.example.retogrupalgestiontareas.domain.HibernateUtil;
 import lombok.extern.java.Log;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -42,11 +43,29 @@ public class AlumnoDAO implements DAO<Alumno> {
 
     @Override
     public Alumno save(Alumno data) {
-        return null;
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(data);
+            transaction.commit();
+            return data;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
     }
 
     @Override
-    public void update(Alumno data) {
+    public Alumno update(Alumno data) { return null;
     }
 
     @Override
